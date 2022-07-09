@@ -1,6 +1,11 @@
 import { HTMLtoElement } from './helpers';
 import iconMap from './iconMap';
 
+/**
+ * Create card element displaying weather data for a specific date time
+ * @param {object} data weather data for one datetime
+ * @returns {HTMLElement}
+ */
 export default function weatherCard(data) {
   const date = new Date(data.dt * 1000);
 
