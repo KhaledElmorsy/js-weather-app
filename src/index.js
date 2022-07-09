@@ -23,3 +23,5 @@ input.addEventListener('keydown', (e) => {
     weather.getLocation().then(updateLocation);
   }
 });
+
+input.dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter'}));
