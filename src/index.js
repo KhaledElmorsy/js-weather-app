@@ -1,29 +1,7 @@
 import './style.css';
+import weather from './weather';
+
 import { weatherCard } from './templates';
-
-const apiKey = '59a057bac22e7b1ca98bd87a6a2e788e';
-const city = 'London';
-const units = 'metric';
-const fetchURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`;
-
-async function getWeather(url) {
-  const response = await fetch(url);
-  const data = await response.json();
-  return data.list;
-}
-
-function getDailyForecast(dataPoints) {
-  const currentPoint = dataPoints[0];
-  const currentHour = new Date(currentPoint.dt * 1000).getHours();
-  return dataPoints.filter((point) => (
-    new Date(point.dt * 1000).getHours() === currentHour
-  ));
-}
-
-function log(result) {
-  console.log(result);
-  return result;
-}
 
 function drawCards(weatherArray) {
   const container = document.getElementById('overview');
@@ -36,3 +14,9 @@ function drawCards(weatherArray) {
 getWeather(fetchURL)
   .then(getDailyForecast)
   .then(drawCards);
+
+const input = document.querySelector('input');
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    weather.setCity(e.target.value).getDailyForecast().then(drawCards);
+});
