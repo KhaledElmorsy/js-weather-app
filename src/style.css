@@ -47,6 +47,11 @@ main {
     padding-top: 40px;
 }
 
+#location {
+    width: 900px;
+    display: flex;
+}
+
 input {
     width: 70%;
     height: 70px;
@@ -56,11 +61,37 @@ input {
     color: grey;
     
     appearance: none;
-    border: 1px solid gainsboro;
-    border-radius: 10px;
+    border: 1px solid lightslategrey;
+    border-radius: 10px 0 0 10px;
     box-shadow: inset 0 0 4px rgba(0,0,0,0.5);
 
     transition: 300ms ease-out;
+}
+
+#current-location {
+    width: auto;
+    flex: 1;
+    position: relative;
+
+    font-size: 0.9rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border: 1px solid lightslategrey;
+    border-radius: 0 10px 10px 0;
+}
+
+#current-location::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 70%;
+    height: 50%;
+    border-bottom: 1px solid grey;
 }
 
 input:focus {
