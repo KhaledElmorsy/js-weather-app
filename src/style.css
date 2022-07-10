@@ -127,9 +127,10 @@ main {
     background-color: var(--background-color);
     
     appearance: none;
-    border: 1px solid lightslategrey;
+    /* border: 1px solid lightslategrey; */
+    border: none;
     border-radius: 10px 0 0 10px;
-    box-shadow: inset 0 0 4px var(--shadow);
+    box-shadow: inset 2px 0 4px var(--shadow);
 
     transition: 300ms ease-out;
 }
@@ -146,8 +147,10 @@ main {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    box-shadow: inset -2px 0 4px var(--shadow);
 
-    border: 1px solid lightslategrey;
+    border: none;
+    border-left: solid rgba(161, 161, 161, 0.403) 0.2px;
     border-radius: 0 10px 10px 0;
 }
 
