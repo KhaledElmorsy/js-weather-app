@@ -1,9 +1,9 @@
 # js-weather-app
 This is a simple weather forecast webapp. It uses asynchronus functions to fetch weather forecast data from [OpenWeather][openweather], convert it to an object and manipulate it in various ways. 
 
-## [Live Demo][demo]
+### [Live Demo][demo]
 
-## Notable Aspects:
+### Notable Aspects:
 - A singleton [module][module] handles api calls and provides methods that return promises containing fitlered and mutated objects from the main reponse to make drawing to the DOM easier.
   - Fetching is handled within the module and isn't exposed to the main handler.
   - The module provides functions to edit the city and units, which automatically refetch.
