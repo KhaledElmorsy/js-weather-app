@@ -16,7 +16,7 @@ function updateLocation(locationData) {
   document.getElementById('country').textContent = locationData.country;
 }
 
-const input = document.querySelector('input');
+const input = document.querySelector('#searchbox');
 input.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     weather.setCity(e.target.value).getDailyForecast().then(drawCards);
