@@ -1,0 +1,213 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&family=Satisfy&display=swap);
+:root{
+    font-size: 25px;
+    font-family: 'Inter', Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    --background-color: white;
+    --text-color: black;
+    --shadow: rgba(0,0,0,0.5);
+    --main-color: cornflowerblue;
+    height: 100%;
+}
+
+#dark-mode:checked ~ #page {
+    --background-color: rgb(28, 27, 33);
+    --text-color: white;
+    --shadow: rgba(209, 124, 246, 0.871);
+    --main-color: rgb(22, 10, 29);
+}
+
+#dark-mode {
+    appearance: none;
+    position: absolute;
+    right:60px;
+    top:50px;
+    width:25px;
+    height: 30px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+}
+
+#dark-mode::before {
+    content: "";
+    width: 50px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: white;
+    transition: 250ms ease-out;
+}
+
+#dark-mode:checked::before{
+    background-color:rgb(37, 36, 43);
+    box-shadow: 0 0 11px rgba(186, 122, 220, 0.89);
+    /* outline: rgb(181, 181, 181) solid 1px; */
+}
+
+#dark-mode::after{
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    transform: translatex(0);
+    transition: 250ms ease-out;
+}
+
+#dark-mode:checked::after {
+    transform: translateX(25px);
+    background-color: rgb(129, 0, 188);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: relative;
+    height: 120px;
+    width: 100%;
+
+    background-color: var(--main-color);
+    box-shadow: 0 0 10px var(--shadow);
+
+
+    display: grid;
+    transition: 300ms ease-out;
+}
+
+#title {
+    font-family: 'Satisfy', sans-serif;
+    font-size: 2.3rem;
+    color: white;
+    place-self: center;
+}
+
+main {
+    padding-top: 40px;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    transition: all 300ms ease-out;
+}
+
+#location {
+    width: 900px;
+    display: flex;
+}
+
+#searchbox {
+    width: 70%;
+    height: 70px;
+    padding-left: 20px;
+    
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    
+    appearance: none;
+    /* border: 1px solid lightslategrey; */
+    border: none;
+    border-radius: 10px 0 0 10px;
+    box-shadow: inset 2px 0 4px var(--shadow);
+
+    transition: 300ms ease-out;
+}
+
+#current-location {
+    width: auto;
+    flex: 1;
+    position: relative;
+
+    font-size: 0.9rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: inset -2px 0 4px var(--shadow);
+
+    border: none;
+    border-left: solid rgba(161, 161, 161, 0.403) 0.2px;
+    border-radius: 0 10px 10px 0;
+}
+
+#searchbox:focus {
+    box-shadow: inset 0 0 8px var(--shadow);
+    border: 1px solid grey;
+    outline: none;
+}
+
+#current-location::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 70%;
+    height: 50%;
+    border-bottom: 1px solid grey;
+}
+
+#overview{
+    margin-top: 60px;
+    padding: 30px;
+
+    box-shadow: inset 0 0 7px var(--shadow);
+    border-radius: 5px;
+    width: 1200px;
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    width: 200px;
+    height: 270px;
+    padding-left: 10px;
+    padding-top: 10px;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+
+    box-shadow: 0 0 5px var(--shadow);
+    font-size: 0.8rem;
+}
+
+.card h1{
+    font-size: 1.4rem;
+}
+
+.card img{
+    width: 60px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+
+/*# sourceMappingURL=main.css.map*/
