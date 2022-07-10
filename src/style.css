@@ -100,9 +100,14 @@ main {
     overflow: auto;
     height: 100%;
     width: 100%;
+        
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 300ms ease-out;
 }
 
 #main-app {
+    margin: auto;
     padding: 0 40px;
     padding-top: 40px;
     width: fit-content;
@@ -111,12 +116,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    background-color: var(--background-color);
-    color: var(--text-color);
 
     overflow: auto;
-    transition: all 300ms ease-out;
 }
 
 #location {
