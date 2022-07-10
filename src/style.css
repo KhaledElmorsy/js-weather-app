@@ -50,9 +50,9 @@ body{
 }
 
 #dark-mode:checked::before{
-    background-color:rgb(28, 27, 33);
-    box-shadow: 0 0 15px rgba(186, 122, 220, 0.89);
-    outline: rgb(181, 181, 181) solid 1px;
+    background-color:rgb(37, 36, 43);
+    box-shadow: 0 0 11px rgba(186, 122, 220, 0.89);
+    /* outline: rgb(181, 181, 181) solid 1px; */
 }
 
 #dark-mode::after{
@@ -68,7 +68,7 @@ body{
 
 #dark-mode:checked::after {
     transform: translateX(25px);
-    background-color: rgb(172, 118, 198);
+    background-color: rgb(129, 0, 188);
 }
 
 * {
